@@ -15,6 +15,9 @@
             * {
                 margin: 0;
                 padding: 0;
+            }
+
+            h1, h2, h3, h4, h5, h6, p, span {
                 font-family: 'Source Sans Pro', sans-serif;
             }
 
@@ -63,11 +66,12 @@
             .carousel-control-prev,
             .carousel-control-next {
                 transition: .25s ease;
+                z-index: 3;
             }
 
             .custom-navbar {
                 position: absolute;
-                z-index: 1;
+                z-index: 1000;
                 padding-top: 40px;
 
                 width: 100%;
@@ -88,35 +92,74 @@
                 box-shadow: 3px 3px 10px rgba(255, 255, 255, .3);
             }
 
-            .custom-navigation {
-                float: right;
-                width: 50%;
+            @media only screen and (max-width: 1025px) {
+
+                .custom-navigation {
+                    float: right;
+                    width: 60vw;
+                    display: none;
+                }
+
             }
 
-            .custom-navigation ul {
-                list-style-type: none;
+            @media only screen and (min-width: 1026px) {
+
+                .custom-navigation {
+                    float: right;
+                    width: 60vw;
+                }
+
+                .custom-navigation ul {
+                    list-style-type: none;
+                }
+
+                .custom-navigation ul li {
+                    display: inline;
+                    text-transform: uppercase;
+                    font-size: .75rem;
+                    padding: 30px 20px;
+                    transition: .5s ease;
+                }
+
+                .custom-navigation ul li a {
+                    color: #fff;
+                    text-decoration: none;
+                    padding: 0 0 10px 0;
+                }
+                
+                .custom-navigation ul li a:hover {
+                    color: #e84c3d;
+                    border-bottom: 3px solid #e84c3d;
+                    transition: .25s ease;
+                }
+                
             }
 
-            .custom-navigation ul li {
-                display: inline;
-                text-transform: uppercase;
-                font-size: .75rem;
-                padding: 30px 20px;
-                transition: .5s ease;
+            .custom-content {
+                z-index: 1;
+                position: absolute;
+                padding-top: 300px;
+                width: 100%;
+                height: 600px;
+                text-align: center;
+                color: white;
             }
 
-            .custom-navigation ul li a {
-                color: #fff;
-                text-decoration: none;
-                padding: 0 0 10px 0;
+            .custom-h1 {
+                font-size: 450%;
+                letter-spacing: .5rem;
             }
-            
 
-            .custom-navigation ul li a:hover {
-                color: #e84c3d;
-                border-bottom: 3px solid #e84c3d;
-                transition: .25s ease;
+            .custom-h3 {
+                font-weight: 400;
             }
+
+            .custom-h6 {
+                font-weight: 100;
+                line-height: 150%;
+            }
+
+
 
         </style>
 
@@ -135,6 +178,17 @@
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
+                </div>
+            </div>
+            <div class="custom-content">
+                <div class="row justify-content-center">
+                    <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6 col-xl-6">
+                        <h3 class="custom-h3">Our Clients Are Our First Priority</h3>
+                        <h1 class="custom-h1">WELCOME TO DINO</h1>
+                        <h6 class="custom-h6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h6>
+                        <button class="btn btn-danger">GET STARTED NOW</button>
+                        <button class="btn btn-outline-light">LEARN MORE</button>
+                    </div>
                 </div>
             </div>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -162,15 +216,20 @@
         </div>
 
         <div class="whoweare">
-            <pre>
-                asd
-                asd
-                asd
-                asd
-                asd
-                asd
-                asd
-            </pre>
+            <div class="row">
+                <div class="col-xs-12 col-md-6 col-sm-6 col-lg-3 col-xl-3 text-center">
+                    asd
+                </div>
+                <div class="col-xs-12 col-md-6 col-sm-6 col-lg-3 col-xl-3 text-center">
+                    asd
+                </div>
+                <div class="col-xs-12 col-md-6 col-sm-6 col-lg-3 col-xl-3 text-center">
+                    asd
+                </div>
+                <div class="col-xs-12 col-md-6 col-sm-6 col-lg-3 col-xl-3 text-center">
+                    asd
+                </div>
+            </div>
         </div>
 
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
