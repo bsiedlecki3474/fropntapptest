@@ -9,8 +9,6 @@
 
     <body>
 
-
-
         <style>
             * {
                 margin: 0;
@@ -19,6 +17,10 @@
 
             h1, h2, h3, h4, h5, h6, p, span {
                 font-family: 'Source Sans Pro', sans-serif;
+            }
+
+            .row {
+                margin: auto;
             }
 
             .carousel-item {
@@ -36,6 +38,22 @@
 
             #carousel-item-3 {
                 background: url('./assets/header3.png') center/cover;
+            }
+
+            #outline-image-1 {
+                background: url('./assets/icon1.png') center/cover;
+            }
+
+            #outline-image-2 {
+                background: url('./assets/icon2.png') center/cover;
+            }
+
+            #outline-image-3 {
+                background: url('./assets/icon3.png') center/cover;
+            }
+
+            #outline-image-4 {
+                background: url('./assets/icon4.png') center/cover;
             }
 
             .carousel-indicators {
@@ -159,7 +177,51 @@
                 line-height: 150%;
             }
 
+            .whoweare {
+                padding-bottom: 100px;
+            }
 
+            .custom-outline {
+                padding: 100px 0;
+                width: 100px;
+                height: 100px;
+                display: block;
+                margin: 0 auto;
+            }
+
+            .custom-outline .outline-rotate {
+                position: absolute;
+                width: 100px;
+                height: 100px;
+
+                border-width: 2px;
+                border-style: solid;
+                border-color: #ddd;
+
+                -webkit-transition: -webkit-transform .5s ease-in-out;
+                transition: transform .5s ease-in-out, border-color .5s ease-in-out;
+            }
+
+            .custom-outline .outline-rotate:hover {
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+                border-color: red;
+            }
+
+            .custom-outline .outline-text {
+                color: #000;
+                transition: color .5s ease-in-out;
+            }
+
+            .custom-outline .outline-rotate:hover ~ .outline-text {
+                color: red;
+            }
+
+            .custom-outline .outline-image {
+                width: 100px;
+                height: 100px;
+                text-align: center;
+            }
 
         </style>
 
@@ -216,18 +278,35 @@
         </div>
 
         <div class="whoweare">
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-xs-12 col-md-6 col-sm-6 col-lg-3 col-xl-3 text-center">
-                    asd
+                    <div class="custom-outline">
+                        <div class="outline-rotate"></div>
+                        <div class="outline-image" id="outline-image-1"></div>
+                        <div class="outline-text">SLEEK DESIGN</div>
+                    </div>
                 </div>
                 <div class="col-xs-12 col-md-6 col-sm-6 col-lg-3 col-xl-3 text-center">
-                    asd
+                    <div class="custom-outline">
+                        <div class="outline-rotate"></div>
+                        <div class="outline-image" id="outline-image-2"></div>
+                        <div class="outline-text">CLEAN CODE</div>
+                    </div>
                 </div>
                 <div class="col-xs-12 col-md-6 col-sm-6 col-lg-3 col-xl-3 text-center">
-                    asd
+                    <div class="custom-outline">
+                        <div class="outline-rotate"></div>
+                        <div class="outline-image" id="outline-image-3"></div>
+                        <div class="outline-text">CREATIVE IDEAS</div>
+                    </div>
+                    
                 </div>
                 <div class="col-xs-12 col-md-6 col-sm-6 col-lg-3 col-xl-3 text-center">
-                    asd
+                    <div class="custom-outline">
+                        <div class="outline-rotate"></div>
+                        <div class="outline-image" id="outline-image-4"></div>
+                        <div class="outline-text">FREE SUPPORT</div>
+                    </div>
                 </div>
             </div>
         </div>
