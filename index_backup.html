@@ -1,0 +1,377 @@
+<html>
+
+    <head>
+        <!-- <link rel="stylesheet" type="text/css" href=""> -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+
+    </head>
+
+    <body>
+
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+
+            h1, h2, h3, h4, h5, h6, p, span {
+                font-family: 'Source Sans Pro', sans-serif;
+            }
+
+            .row {
+                margin: auto;
+            }
+
+            .carousel-item {
+                width: 100%;
+                height: 100vh;
+            }
+
+            #carousel-item-1 {
+                background: url('./assets/header1_2.png') center/cover;
+            }
+
+            #carousel-item-2 {
+                background: url('./assets/header2_2.png') center/cover;
+            }
+
+            #carousel-item-3 {
+                background: url('./assets/header3_2.png') center/cover;
+            }
+
+            #outline-image-1 {
+                background: url('./assets/icon1.png') center/cover;
+            }
+
+            #outline-image-2 {
+                background: url('./assets/icon2.png') center/cover;
+            }
+
+            #outline-image-3 {
+                background: url('./assets/icon3.png') center/cover;
+            }
+
+            #outline-image-4 {
+                background: url('./assets/icon4.png') center/cover;
+            }
+
+            .carousel-indicators {
+                padding-bottom: 125px !important;
+            }
+
+            .carousel-indicators li {
+                width: .625rem;
+                height: .625rem;
+                border-radius: 50%;
+                border: 1px solid #fff;
+                background: none;
+                margin: 0 10px;
+            }
+
+            .carousel-indicators li:active {
+                background: #fff;
+            }
+
+            a .carousel-arrow {
+                padding: 10px;
+                background: #aaa;
+                border-radius: 2px;
+                opacity: 1;
+                transition: .25s ease;
+            }
+
+            a .carousel-arrow:hover,
+            a .carousel-arrow:focus {
+                background: #e84c3d;
+                transition: .25s ease;
+                opacity: 1;
+            }
+
+            .carousel-control-prev:hover, .carousel-control-prev:focus,
+            .carousel-control-next:hover, .carousel-control-next:focus {
+                opacity: 1;
+                transition: .25s ease;
+            }
+
+            .carousel-control-prev,
+            .carousel-control-next {
+                transition: .25s ease;
+                z-index: 3;
+            }
+
+            .custom-navbar {
+                position: absolute;
+                z-index: 1000;
+                padding-top: 40px;
+
+                width: 100%;
+                height: 100px;
+                color: white;
+            }
+
+            .custom-logo {
+                background: url('./assets/logo.png') center/cover;
+                float: left;
+                margin-left: 20%;
+                width: 150px;
+                height: 50px;
+                transition: box-shadow .3s ease;
+            }
+            
+            .custom-logo:hover {
+                box-shadow: 3px 3px 10px rgba(255, 255, 255, .3);
+            }
+
+            @media only screen and (max-width: 1025px) {
+
+                .custom-navigation {
+                    float: right;
+                    width: 60vw;
+                    display: none;
+                }
+
+            }
+
+            @media only screen and (min-width: 1026px) {
+
+                .custom-navigation {
+                    float: right;
+                    width: 60vw;
+                }
+
+                .custom-navigation ul {
+                    list-style-type: none;
+                }
+
+                .custom-navigation ul li {
+                    display: inline;
+                    text-transform: uppercase;
+                    font-size: .75rem;
+                    padding: 30px 20px;
+                    transition: .5s ease;
+                }
+
+                .custom-navigation ul li a {
+                    color: #fff;
+                    text-decoration: none;
+                    padding: 0 0 10px 0;
+                }
+                
+                .custom-navigation ul li a:hover {
+                    color: #e84c3d;
+                    border-bottom: 3px solid #e84c3d;
+                    transition: .25s ease;
+                }
+                
+            }
+
+            .custom-content {
+                z-index: 1;
+                position: absolute;
+                padding-top: 20vh;
+                width: 100%;
+                height: 600px;
+                text-align: center;
+                color: white;
+            }
+
+            .custom-h1 {
+                font-size: 450%;
+                letter-spacing: .5rem;
+            }
+
+            .custom-h3 {
+                font-weight: 400;
+            }
+
+            .custom-h6 {
+                font-weight: 100;
+                line-height: 150%;
+            }
+
+            .whoweare {
+                padding-bottom: 150px;
+            }
+
+            .custom-outline {
+                padding: 100px 0;
+                width: 100px;
+                height: 100px;
+                display: block;
+                margin: 0 auto;
+            }
+
+            .custom-outline .outline-rotate {
+                position: absolute;
+                width: 100px;
+                height: 100px;
+
+                border-width: 2px;
+                border-style: solid;
+                border-color: #ddd;
+
+                -webkit-transition: -webkit-transform .5s ease-in-out;
+                transition: transform .5s ease-in-out, border-color .5s ease-in-out;
+            }
+
+            .custom-outline .outline-rotate:hover {
+                -webkit-transform: rotate(45deg);
+                transform: rotate(45deg);
+                border-color: #e84c3d;
+            }
+
+            .custom-outline .outline-text {
+                color: #000;
+                transition: color .5s ease-in-out;
+                padding-top: 50px;
+            }
+
+            .custom-outline .outline-rotate:hover ~ .outline-text {
+                color: #e84c3d;
+            }
+
+            .custom-outline .outline-image {
+                width: 100px;
+                height: 100px;
+                text-align: center;
+            }
+
+            .separator {
+                padding: 25px 0;
+                display: block;
+                text-align: center;
+                overflow: hidden;
+                white-space: nowrap; 
+            }
+
+            .separator span {
+                width: .5rem;
+                height: .5rem;
+                background: #e84c3d;
+                border-radius: 50%;
+            }
+
+            .separator > span {
+                position: relative;
+                display: inline-block;
+            }
+            
+            .separator > span:before,
+            .separator > span:after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                width: 100px;
+                height: 1px;
+                background: #fff;
+            }
+
+            .separator > span:before {
+                right: 100%;
+                margin-right: 15px;
+            }
+
+            .separator > span:after {
+                left: 100%;
+                margin-left: 15px;
+            }
+
+        </style>
+
+        <div class="header">
+            <div class="custom-navbar">
+                <div class="custom-logo">
+                    
+                </div>
+                <div class="custom-navigation">
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Team</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="custom-content">
+                <div class="row justify-content-center">
+                    <div class="col-xs-12 col-sm-8 col-md-6 col-lg-6 col-xl-6">
+                        <h3 class="custom-h3">Our Clients Are Our First Priority</h3>
+                        <h1 class="custom-h1">WELCOME TO DINO</h1>
+                        <div class="separator">
+                            <span>&nbsp;</span>
+                        </div>
+                        <h6 class="custom-h6">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h6>
+                        <button class="btn btn-danger">GET STARTED NOW</button>
+                        <button class="btn btn-outline-light">LEARN MORE</button>
+                    </div>
+                </div>
+            </div>
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" id="carousel-item-1"></div>
+                    <div class="carousel-item" id="carousel-item-2"></div>
+                    <div class="carousel-item" id="carousel-item-3"></div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <div class="carousel-arrow">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-angle-left"></i></span>
+                    </div>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <div class="carousel-arrow">
+                        <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-angle-right"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div class="whoweare">
+            <div class="row justify-content-center">
+                <div class="col-xs-12 col-md-6 col-sm-6 col-lg-3 col-xl-3 text-center">
+                    <div class="custom-outline">
+                        <div class="outline-rotate"></div>
+                        <div class="outline-image" id="outline-image-1"></div>
+                        <div class="outline-text">SLEEK DESIGN</div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 col-sm-6 col-lg-3 col-xl-3 text-center">
+                    <div class="custom-outline">
+                        <div class="outline-rotate"></div>
+                        <div class="outline-image" id="outline-image-2"></div>
+                        <div class="outline-text">CLEAN CODE</div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-md-6 col-sm-6 col-lg-3 col-xl-3 text-center">
+                    <div class="custom-outline">
+                        <div class="outline-rotate"></div>
+                        <div class="outline-image" id="outline-image-3"></div>
+                        <div class="outline-text">CREATIVE IDEAS</div>
+                    </div>
+                    
+                </div>
+                <div class="col-xs-12 col-md-6 col-sm-6 col-lg-3 col-xl-3 text-center">
+                    <div class="custom-outline">
+                        <div class="outline-rotate"></div>
+                        <div class="outline-image" id="outline-image-4"></div>
+                        <div class="outline-text">FREE SUPPORT</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    </body>
+
+</html>
